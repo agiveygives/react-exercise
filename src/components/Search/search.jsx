@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form'
+
+const propTypes = {
+  searchInputCallback: PropTypes.func.isRequired,
+}
 
 const Search = ({ searchInputCallback }) => {
   const [searchInput, setSearchInput] = React.useState('')
@@ -25,5 +30,7 @@ const Search = ({ searchInputCallback }) => {
     </div>
   )
 }
+
+Search.propTypes = propTypes;
 
 export default Search;
