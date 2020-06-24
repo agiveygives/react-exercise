@@ -61,7 +61,9 @@ const ContactCardList = ({ allContacts, searchInput, sortOption, setContactsCall
     }
     else {
       setSortedContactsList(
-        sortContacts(allContacts.filter(contact => contact.name.includes(searchInput)), sortOption)
+        sortContacts(
+          allContacts.filter(contact => contact.name.toLowerCase().includes(searchInput.toLowerCase())), sortOption
+        )
       )
     }
   }, [searchInput, sortOption, allContacts])
